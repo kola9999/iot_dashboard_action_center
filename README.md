@@ -1,2 +1,3 @@
 # iot_dashboard_action_center
-Created with CodeSandbox
+
+This is the iot dashboard progressive web app created using React JS , Firebase and using https://codesandbox.io.

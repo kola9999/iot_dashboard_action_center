@@ -14,7 +14,7 @@ export default function App() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className="mt-2" style={{ color: "#fff" }} href="/">
+            <Nav.Link className="mt-2 ml-6" style={{ color: "#fff" }} href="/">
               <b>Faculty:</b>
             </Nav.Link>
             <Nav.Link className="mt-2" style={{ color: "#fff" }} href="/">

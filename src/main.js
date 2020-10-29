@@ -4,9 +4,9 @@ import { Line } from "react-chartjs-2";
 import "chartjs-plugin-streaming";
 import "./styles.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Alert, Card, Button } from "react-bootstrap";
+import { Alert, Card } from "react-bootstrap";
 //var today = new Date(),
-//time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+//time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(); //rgba(0, 128, 0, 0.5)
 const graphdata = {
   datasets: [
     {
@@ -52,11 +52,16 @@ export default function Main() {
       ]
     }
   };
-  var msg1;
+  var msg1, msg2;
   if (fdata.data === 0) {
     msg1 = "no intruder";
   } else if (fdata.data === 1) {
     msg1 = "Alarm on, intruder alert";
+  }
+  if (fdata.gasdata <= 500) {
+    msg2 = "Normal level";
+  } else if (fdata.gadata > 500) {
+    msg2 = "Leakage detected";
   }
   return (
     <div className="App">
@@ -100,7 +105,7 @@ export default function Main() {
                     Sensor reading: {fdata.gasdata}
                   </Card.Title>
                   <Card.Text style={{ textAlign: "left" }}>
-                    <strong>message:</strong>
+                    <strong>message: {msg2}</strong>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -108,15 +113,16 @@ export default function Main() {
           </div>
         </div>
         <br />
+        <Alert variant="info">Real-time Gas level montoring</Alert>
         <Line data={graphdata} options={options} />
       </div>
       <a
-        href="http://26.127.18.204:8080/"
+        href="http://192.168.43.155:8080/jsfs.html"
         class="btn btn-primary btn-lg active mt-5"
         role="button"
         aria-pressed="true"
       >
-        View camera
+        View camera feed
       </a>
     </div>
   );

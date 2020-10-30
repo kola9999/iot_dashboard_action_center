@@ -6,14 +6,15 @@ import Jumbo from "./jumbo";
 import Main from "./main";
 const rootElement = document.getElementById("root");
 var firebaseConfig = {
-  apiKey: "AIzaSyBdVy7Tn4HniT6NMzvARzp6qRbF3mHmhRM",
-  authDomain: "potent-symbol-233716.firebaseapp.com",
-  databaseURL: "https://potent-symbol-233716.firebaseio.com",
-  projectId: "potent-symbol-233716",
-  storageBucket: "potent-symbol-233716.appspot.com",
-  messagingSenderId: "1075928338495",
-  appId: "1:1075928338495:web:b0ca7383d74ae5e030a88a"
+  apiKey: `${process.env.REACT_APP_APIKEY}`,
+  authDomain: `${process.env.REACT_APP_AUTHDOMAIN}`,
+  databaseURL: `${process.env.REACT_APP_DATABASEURL}`,
+  projectId: `${process.env.REACT_APP_PROJECTID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGEBUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGINGSENDERID}`,
+  appId: `${process.env.REACT_APP_APPID}`
 };
+console.log(process.env);
 firebase.initializeApp(firebaseConfig);
 ReactDOM.render(
   <React.StrictMode>

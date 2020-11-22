@@ -14,17 +14,6 @@ export default function App() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link className="mt-2 ml-6" style={{ color: "#fff" }} href="/">
-              <b>Faculty:</b>
-            </Nav.Link>
-            <Nav.Link className="mt-2" style={{ color: "#fff" }} href="/">
-              Prof.Abraham Sampson
-            </Nav.Link>
-            <Form inline className="mr-sm-2">
-              <div className="avatar">
-                <img className="avatarimg" alt="faculty" src={abraham} />
-              </div>
-            </Form>
             <Nav.Link className="mt-2" style={{ color: "#fff" }} href="/">
               <b>Lead developer:</b>
             </Nav.Link>
